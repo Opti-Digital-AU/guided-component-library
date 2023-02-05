@@ -1,3 +1,6 @@
+# Guide URL
+- Not yet on the website. Please contact me for the guide until this is updated!
+
 # Component Library
 A React Component Library for building components in isolation.
 This library will be consumed in the another repo as a dependency via private NPM package hosted via GitHub Packages.
