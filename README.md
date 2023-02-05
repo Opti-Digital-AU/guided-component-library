@@ -39,7 +39,7 @@ This library is built to support the following tools:
 	- These credentials will look something like below and will be set up in github as a personal access token
 ```javascript
 registry=https://registry.npmjs.org/
-@opti-digital:registry=https://npm.pkg.github.com/
+@github-user:registry=https://npm.pkg.github.com/
 //npm.pkg.github.com/:_authToken=PUBLISH_AUTH_TOKEN
 ```
 
