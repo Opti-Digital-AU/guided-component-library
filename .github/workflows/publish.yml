@@ -1,0 +1,35 @@
+name: Publish Component Library
+
+# Event for the workflow, waits for push of updated package version number (tags). 
+# More options here can be found in the GitHub Actions documentation.
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - run: npm ci
+      - run: npm run test
+      - run: npm run build
+
+  publish-library:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          registry-url: "https://npm.pkg.github.com"
+          scope: "@opti-digital"
+      - run: npm ci
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.PUBLISH_AUTH_TOKEN }}

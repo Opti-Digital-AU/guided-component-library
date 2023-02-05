@@ -1,0 +1,64 @@
+{
+  "name": "@github-user/component-library-name",
+  "version": "0.0.0",
+  "description": "A simple skeleton template for a custom React component library with StoryBook 7 integration, Jest React Testing Library and Chromatic + more. See README for more information.",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "src",
+    "dist"
+  ],
+  "scripts": {
+    "test": "jest",
+    "build": "rm -rf dist && rollup -c",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "chromatic": "chromatic --exit-zero-on-changes"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/github-user"
+  },
+  "author": "AUTHOR_NAME",
+  "license": "ISC",
+  "peerDependencies": {
+    "react": ">=18.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/preset-typescript": "^7.18.6",
+    "@rollup/plugin-commonjs": "^24.0.1",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-terser": "^0.4.0",
+    "@rollup/plugin-typescript": "^11.0.0",
+    "@storybook/addon-essentials": "^7.0.0-beta.40",
+    "@storybook/addon-interactions": "^7.0.0-beta.40",
+    "@storybook/addon-links": "^7.0.0-beta.40",
+    "@storybook/blocks": "^7.0.0-beta.40",
+    "@storybook/react": "^7.0.0-beta.40",
+    "@storybook/react-webpack5": "^7.0.0-beta.40",
+    "@storybook/testing-library": "^0.0.14-next.1",
+    "@testing-library/react": "^13.4.0",
+    "@types/jest": "^29.4.0",
+    "@types/react": "^18.0.27",
+    "babel-jest": "^29.4.1",
+    "chromatic": "^6.15.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^29.4.1",
+    "jest-environment-jsdom": "^29.4.1",
+    "postcss": "^8.4.21",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rollup": "^3.11.0",
+    "rollup-plugin-dts": "^5.1.1",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "storybook": "^7.0.0-beta.40",
+    "tslib": "^2.4.1",
+    "typescript": "^4.9.4",
+    "typescript-plugin-css-modules": "^4.1.1"
+  }
+}

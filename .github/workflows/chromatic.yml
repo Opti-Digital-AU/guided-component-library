@@ -1,0 +1,31 @@
+# Workflow name
+name: 'Publish to Chromatic'
+
+# Event for the workflow, waits for push from specific branch. 
+# More options here can be found in the GitHub Actions documentation.
+on: 
+  push:
+    branches:
+      - chromatic
+
+# List of jobs
+jobs:
+  chromatic-deployment:
+    # Operating System
+    runs-on: ubuntu-latest
+    # Job steps
+    steps:
+      - uses: actions/checkout@v1
+      - name: Install dependencies
+        run: npm ci
+        # Adds Chromatic as a step in the workflow
+      - name: Publish to Chromatic
+        id: chromatic-deployment
+        uses: chromaui/action@v1
+        # Chromatic GitHub Action options
+        with:
+          # Chromatic projectToken, refer to the manage page to obtain it.
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+      - name: Publish Build Summary
+        # Publish build summary after completion (Will show buildUrl, Storybook URL and Component Count ot the Build Summary after the workflow is completed)
+        run: echo -e "| Results |  |\n| --- | --- |\n| Build Results | ${{steps.chromatic-deployment.outputs.buildUrl}} |\n| Storybook Preview | ${{steps.chromatic-deployment.outputs.storybookUrl}} |\n| Component Count | ${{steps.chromatic-deployment.outputs.componentCount}} |" >> $GITHUB_STEP_SUMMARY

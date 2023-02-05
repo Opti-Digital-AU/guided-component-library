@@ -1,0 +1,3 @@
+registry=https://registry.npmjs.org/
+@github-user:registry=https://npm.pkg.github.com/
+//npm.pkg.github.com/:_authToken=PUBLISH_AUTH_TOKEN

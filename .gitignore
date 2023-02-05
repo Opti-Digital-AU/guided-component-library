@@ -1,3 +1,9 @@
+# NPM auth
+.npmrc
+
+# Storybook Static Content
+storybook-static/
+
 # Logs
 logs
 *.log
@@ -102,3 +108,13 @@ dist
 
 # TernJS port file
 .tern-port
+
+# IDE Files
+# PHPStorm
+*.iml
+*.iws
+*.ipr
+.idea/
+
+# Visual Studio
+.vscode/
