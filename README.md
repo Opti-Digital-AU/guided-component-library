@@ -87,7 +87,7 @@ git clone git@github.com:github-user/component-library-name.git .
 - Run command `npm run test`
 - This will run tests on all components in the library and output success or error results to make sure components are functionally correct.
 
-##### Build Component Cibrary in Preparation of Packaging and Publishing
+##### Build Component Library in Preparation of Packaging and Publishing
 - Run command `npm run build`
 - This will run the compiler and process all components and export them for the NPM package.
 - You will need to use `npm publish` to publish the component library when you are finished with the build. 
